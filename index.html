@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tu Tienda Mayorista</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #111;
+            color: white;
+            padding: 18px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .cart {
+            background: white;
+            color: #111;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* HERO */
+
+        .hero {
+            background: #222;
+            color: white;
+            padding: 70px 5%;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #ddd;
+            margin-bottom: 25px;
+        }
+
+        .hero button {
+            background: white;
+            border: none;
+            padding: 14px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* CONTENIDO */
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .section-title {
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        /* CATEGORIAS */
+
+        .categories {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .category {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 10px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .category:hover {
+            background: #111;
+            color: white;
+        }
+
+        /* BUSCADOR */
+
+        .search {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        /* PRODUCTOS */
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .product {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .product-image {
+            height: 200px;
+            background: #eaeaea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+        }
+
+        .product-info {
+            padding: 18px;
+        }
+
+        .product-info h3 {
+            margin-bottom: 8px;
+        }
+
+        .price {
+            font-size: 21px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .add {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 7px;
+            background: #111;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .add:hover {
+            background: #333;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+        }
+
+        /* CELULAR */
+
+        @media (max-width: 600px) {
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero {
+                padding: 50px 20px;
+            }
+
+            header {
+                padding: 15px 20px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        TU MARCA
+    </div>
+
+    <div class="cart">
+        🛒 Carrito (0)
+    </div>
+
+</header>
+
+
+<section class="hero">
+
+    <h1>Venta Mayorista</h1>
+
+    <p>
+        Productos al mejor precio para tu negocio
+    </p>
+
+    <button onclick="document.getElementById('catalogo').scrollIntoView()">
+        Ver catálogo
+    </button>
+
+</section>
+
+
+<div class="container" id="catalogo">
+
+    <h2 class="section-title">
+        Catálogo
+    </h2>
+
+
+    <input
+        type="text"
+        class="search"
+        placeholder="🔎 Buscar productos..."
+    >
+
+
+    <div class="categories">
+
+        <div class="category">
+            Todos
+        </div>
+
+        <div class="category">
+            Electrónica
+        </div>
+
+        <div class="category">
+            Accesorios
+        </div>
+
+        <div class="category">
+            Audio
+        </div>
+
+        <div class="category">
+            Otros
+        </div>
+
+    </div>
+
+
+    <div class="products">
+
+
+        <div class="product">
+
+            <div class="product-image">
+                FOTO
+            </div>
+
+            <div class="product-info">
+
+                <h3>
+                    Producto de ejemplo
+                </h3>
+
+                <div class="price">
+                    $10.000
+                </div>
+
+                <button class="add">
+                    Agregar al carrito
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-image">
+                FOTO
+            </div>
+
+            <div class="product-info">
+
+                <h3>
+                    Producto de ejemplo
+                </h3>
+
+                <div class="price">
+                    $15.000
+                </div>
+
+                <button class="add">
+                    Agregar al carrito
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-image">
+                FOTO
+            </div>
+
+            <div class="product-info">
+
+                <h3>
+                    Producto de ejemplo
+                </h3>
+
+                <div class="price">
+                    $20.000
+                </div>
+
+                <button class="add">
+                    Agregar al carrito
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <p>
+        © 2026 Tu Marca — Venta Mayorista
+    </p>
+
+    <p style="margin-top:10px;">
+        Consultas y pedidos por WhatsApp
+    </p>
+
+</footer>
+
+
+</body>
+</html>

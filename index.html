@@ -4,369 +4,518 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Tu Tienda Mayorista</title>
+    <title>Tecnocel | Venta Mayorista</title>
 
     <style>
+
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
-            color: #222;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fa;
+            color: #111;
         }
 
-        /* HEADER */
+        /* ================= HEADER ================= */
 
         header {
-            background: #111;
+            height: 75px;
+            background: #050505;
             color: white;
-            padding: 18px 5%;
+
             display: flex;
             align-items: center;
             justify-content: space-between;
+
+            padding: 0 6%;
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .logo {
-            font-size: 24px;
-            font-weight: bold;
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: -1px;
         }
 
-        .cart {
+        .logo span {
+            color: #4d8dff;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            color: #5c9aff;
+        }
+
+        .cart-button {
             background: white;
             color: #111;
-            padding: 10px 16px;
-            border-radius: 8px;
-            cursor: pointer;
+
+            border: none;
+            padding: 11px 17px;
+
+            border-radius: 9px;
+
             font-weight: bold;
+            cursor: pointer;
         }
 
-        /* HERO */
+        /* ================= HERO ================= */
 
         .hero {
-            background: #222;
-            color: white;
-            padding: 70px 5%;
+            min-height: 520px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
             text-align: center;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #020617,
+                    #0b1f4d,
+                    #2365c7
+                );
+
+            padding: 70px 20px;
+        }
+
+        .hero-content {
+            max-width: 850px;
         }
 
         .hero h1 {
-            font-size: 42px;
-            margin-bottom: 15px;
+            font-size: 58px;
+            line-height: 1.05;
+            margin-bottom: 22px;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            color: #8bb8ff;
         }
 
         .hero p {
-            font-size: 18px;
-            color: #ddd;
-            margin-bottom: 25px;
+            font-size: 20px;
+            color: #e4eaff;
+            margin-bottom: 15px;
         }
 
-        .hero button {
-            background: white;
-            border: none;
-            padding: 14px 25px;
-            border-radius: 8px;
+        .minimum {
             font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
+            color: #c7d6f7;
+            margin-bottom: 32px;
         }
 
-        /* CONTENIDO */
+        .hero-button {
+            display: inline-block;
 
-        .container {
+            background: white;
+            color: #111;
+
+            padding: 15px 28px;
+
+            border-radius: 9px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+            font-size: 16px;
+
+            transition: 0.2s;
+        }
+
+        .hero-button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* ================= CATEGORIAS ================= */
+
+        .section {
             width: 90%;
             max-width: 1200px;
-            margin: 40px auto;
+            margin: 60px auto;
         }
 
         .section-title {
-            margin-bottom: 20px;
-            font-size: 28px;
+            font-size: 30px;
+            margin-bottom: 25px;
         }
 
-        /* CATEGORIAS */
-
         .categories {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
         }
 
         .category {
             background: white;
-            border: 1px solid #ddd;
-            padding: 10px 18px;
-            border-radius: 20px;
+
+            padding: 25px 15px;
+
+            border-radius: 12px;
+
+            text-align: center;
+
+            font-weight: bold;
+
+            border: 1px solid #e3e6eb;
+
             cursor: pointer;
+
+            transition: 0.2s;
         }
 
         .category:hover {
-            background: #111;
-            color: white;
+            transform: translateY(-4px);
+            border-color: #4d8dff;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
         }
 
-        /* BUSCADOR */
-
-        .search {
-            width: 100%;
-            padding: 14px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            font-size: 16px;
+        .category-icon {
+            font-size: 30px;
+            margin-bottom: 10px;
         }
 
-        /* PRODUCTOS */
+        /* ================= INFO ================= */
 
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
-
-        .product {
+        .info {
             background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+
+            width: 90%;
+            max-width: 1200px;
+
+            margin: 60px auto;
+
+            padding: 35px;
+
+            border-radius: 15px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 30px;
+
+            border: 1px solid #e3e6eb;
         }
 
-        .product-image {
-            height: 200px;
-            background: #eaeaea;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #888;
+        .info-box {
+            text-align: center;
         }
 
-        .product-info {
-            padding: 18px;
-        }
-
-        .product-info h3 {
+        .info-box strong {
+            display: block;
+            font-size: 18px;
             margin-bottom: 8px;
         }
 
-        .price {
-            font-size: 21px;
-            font-weight: bold;
-            margin-bottom: 15px;
+        .info-box p {
+            color: #666;
+            font-size: 14px;
         }
 
-        .add {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 7px;
-            background: #111;
-            color: white;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .add:hover {
-            background: #333;
-        }
-
-        /* FOOTER */
+        /* ================= FOOTER ================= */
 
         footer {
-            background: #111;
+            background: #050505;
             color: white;
+
+            padding: 40px 6%;
+
             text-align: center;
-            padding: 30px;
-            margin-top: 60px;
+
+            margin-top: 80px;
         }
 
-        /* CELULAR */
+        footer h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
 
-        @media (max-width: 600px) {
+        footer p {
+            color: #aaa;
+            font-size: 14px;
+        }
 
-            .hero h1 {
-                font-size: 32px;
+        /* ================= CELULAR ================= */
+
+        @media (max-width: 800px) {
+
+            header {
+                height: 65px;
+                padding: 0 20px;
+            }
+
+            nav {
+                display: none;
             }
 
             .hero {
-                padding: 50px 20px;
+                min-height: 470px;
             }
 
-            header {
-                padding: 15px 20px;
+            .hero h1 {
+                font-size: 40px;
             }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .categories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .info {
+                grid-template-columns: 1fr;
+            }
+
         }
 
     </style>
 </head>
 
+
 <body>
+
+
+<!-- ================= HEADER ================= -->
 
 <header>
 
     <div class="logo">
-        TU MARCA
+        TECNO<span>CEL</span>
     </div>
 
-    <div class="cart">
+    <nav>
+
+        <a href="#">Inicio</a>
+
+        <a href="#categorias">
+            Catálogo
+        </a>
+
+        <a href="#como-comprar">
+            Cómo comprar
+        </a>
+
+    </nav>
+
+    <button class="cart-button">
         🛒 Carrito (0)
-    </div>
+    </button>
 
 </header>
 
 
+<!-- ================= HERO ================= -->
+
 <section class="hero">
 
-    <h1>Venta Mayorista</h1>
+    <div class="hero-content">
 
-    <p>
-        Productos al mejor precio para tu negocio
-    </p>
+        <h1>
+            Tecnología al <span>por mayor</span>
+        </h1>
 
-    <button onclick="document.getElementById('catalogo').scrollIntoView()">
-        Ver catálogo
-    </button>
+        <p>
+            Accesorios, productos Apple y tecnología para tu negocio.
+        </p>
+
+        <div class="minimum">
+            Compra mínima • Envíos a todo el país
+        </div>
+
+        <a
+            href="#categorias"
+            class="hero-button"
+        >
+            VER CATÁLOGO
+        </a>
+
+    </div>
 
 </section>
 
 
-<div class="container" id="catalogo">
+<!-- ================= CATEGORIAS ================= -->
+
+<section
+    class="section"
+    id="categorias"
+>
 
     <h2 class="section-title">
-        Catálogo
+        Categorías
     </h2>
-
-
-    <input
-        type="text"
-        class="search"
-        placeholder="🔎 Buscar productos..."
-    >
 
 
     <div class="categories">
 
-        <div class="category">
-            Todos
-        </div>
 
         <div class="category">
-            Electrónica
+
+            <div class="category-icon">
+                🍎
+            </div>
+
+            Apple
+
         </div>
 
+
         <div class="category">
+
+            <div class="category-icon">
+                📱
+            </div>
+
             Accesorios
+
         </div>
 
+
         <div class="category">
+
+            <div class="category-icon">
+                🔌
+            </div>
+
+            Cargadores
+
+        </div>
+
+
+        <div class="category">
+
+            <div class="category-icon">
+                🎧
+            </div>
+
             Audio
+
         </div>
+
 
         <div class="category">
-            Otros
-        </div>
 
-    </div>
-
-
-    <div class="products">
-
-
-        <div class="product">
-
-            <div class="product-image">
-                FOTO
+            <div class="category-icon">
+                💻
             </div>
 
-            <div class="product-info">
-
-                <h3>
-                    Producto de ejemplo
-                </h3>
-
-                <div class="price">
-                    $10.000
-                </div>
-
-                <button class="add">
-                    Agregar al carrito
-                </button>
-
-            </div>
+            Tecnología
 
         </div>
 
 
-        <div class="product">
+        <div class="category">
 
-            <div class="product-image">
-                FOTO
+            <div class="category-icon">
+                🔥
             </div>
 
-            <div class="product-info">
-
-                <h3>
-                    Producto de ejemplo
-                </h3>
-
-                <div class="price">
-                    $15.000
-                </div>
-
-                <button class="add">
-                    Agregar al carrito
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <div class="product">
-
-            <div class="product-image">
-                FOTO
-            </div>
-
-            <div class="product-info">
-
-                <h3>
-                    Producto de ejemplo
-                </h3>
-
-                <div class="price">
-                    $20.000
-                </div>
-
-                <button class="add">
-                    Agregar al carrito
-                </button>
-
-            </div>
+            Ofertas
 
         </div>
 
 
     </div>
 
-</div>
+</section>
 
+
+<!-- ================= INFO ================= -->
+
+<section
+    class="info"
+    id="como-comprar"
+>
+
+
+    <div class="info-box">
+
+        <strong>
+            📦 Venta mayorista
+        </strong>
+
+        <p>
+            Precios especiales para compras por cantidad.
+        </p>
+
+    </div>
+
+
+    <div class="info-box">
+
+        <strong>
+            🛒 Armá tu pedido
+        </strong>
+
+        <p>
+            Elegí todos los productos que necesitás y agregalos al carrito.
+        </p>
+
+    </div>
+
+
+    <div class="info-box">
+
+        <strong>
+            📲 Pedí por WhatsApp
+        </strong>
+
+        <p>
+            Confirmá tu pedido y coordiná el pago y envío.
+        </p>
+
+    </div>
+
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
+    <h3>
+        TECNOCEL
+    </h3>
+
     <p>
-        © 2026 Tu Marca — Venta Mayorista
+        Venta mayorista de tecnología y accesorios.
     </p>
 
-    <p style="margin-top:10px;">
-        Consultas y pedidos por WhatsApp
+    <p style="margin-top:15px;">
+        © 2026 Tecnocel
     </p>
 
 </footer>
 
 
 </body>
+
 </html>

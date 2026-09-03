@@ -1,308 +1,451 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Tecnocel | Venta Mayorista</title>
+<title>Tecnocel | Venta Mayorista</title>
 
-    <style>
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f7fa;
-            color: #111;
-        }
-
-        /* ================= HEADER ================= */
-
-        header {
-            height: 75px;
-            background: #050505;
-            color: white;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            padding: 0 6%;
-
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .logo {
-            font-size: 25px;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
+    color: #111;
+}
 
-        .logo span {
-            color: #4d8dff;
-        }
+/* HEADER */
 
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
+header {
+    height: 75px;
+    background: #050505;
+    color: white;
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 600;
-            transition: 0.2s;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-        nav a:hover {
-            color: #5c9aff;
-        }
+    padding: 0 6%;
 
-        .cart-button {
-            background: white;
-            color: #111;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-            border: none;
-            padding: 11px 17px;
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+}
 
-            border-radius: 9px;
+.logo span {
+    color: #4d8dff;
+}
 
-            font-weight: bold;
-            cursor: pointer;
-        }
+nav {
+    display: flex;
+    gap: 30px;
+}
 
-        /* ================= HERO ================= */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-        .hero {
-            min-height: 520px;
+.cart-button {
+    background: white;
+    color: #111;
+    border: none;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    padding: 11px 17px;
+    border-radius: 9px;
 
-            text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
 
-            color: white;
+/* HERO */
 
-            background:
-                linear-gradient(
-                    120deg,
-                    #020617,
-                    #0b1f4d,
-                    #2365c7
-                );
+.hero {
+    min-height: 430px;
 
-            padding: 70px 20px;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-        .hero-content {
-            max-width: 850px;
-        }
+    text-align: center;
 
-        .hero h1 {
-            font-size: 58px;
-            line-height: 1.05;
-            margin-bottom: 22px;
-            letter-spacing: -2px;
-        }
+    color: white;
 
-        .hero h1 span {
-            color: #8bb8ff;
-        }
+    background:
+        linear-gradient(
+            120deg,
+            #020617,
+            #0b1f4d,
+            #2365c7
+        );
 
-        .hero p {
-            font-size: 20px;
-            color: #e4eaff;
-            margin-bottom: 15px;
-        }
+    padding: 60px 20px;
+}
 
-        .minimum {
-            font-size: 16px;
-            color: #c7d6f7;
-            margin-bottom: 32px;
-        }
+.hero h1 {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
 
-        .hero-button {
-            display: inline-block;
+.hero h1 span {
+    color: #8bb8ff;
+}
 
-            background: white;
-            color: #111;
+.hero p {
+    font-size: 19px;
+    margin-bottom: 30px;
+}
 
-            padding: 15px 28px;
+.hero-button {
+    display: inline-block;
 
-            border-radius: 9px;
+    background: white;
+    color: #111;
 
-            text-decoration: none;
+    padding: 14px 25px;
 
-            font-weight: bold;
-            font-size: 16px;
+    border-radius: 8px;
 
-            transition: 0.2s;
-        }
+    text-decoration: none;
 
-        .hero-button:hover {
-            transform: translateY(-2px);
-        }
+    font-weight: bold;
+}
 
-        /* ================= CATEGORIAS ================= */
+/* CONTENEDOR */
 
-        .section {
-            width: 90%;
-            max-width: 1200px;
-            margin: 60px auto;
-        }
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 55px auto;
+}
 
-        .section-title {
-            font-size: 30px;
-            margin-bottom: 25px;
-        }
+.section-title {
+    font-size: 30px;
+    margin-bottom: 25px;
+}
 
-        .categories {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 15px;
-        }
+/* BUSCADOR */
 
-        .category {
-            background: white;
+.search {
+    width: 100%;
 
-            padding: 25px 15px;
+    padding: 15px;
 
-            border-radius: 12px;
+    border: 1px solid #ddd;
+    border-radius: 9px;
 
-            text-align: center;
+    font-size: 16px;
 
-            font-weight: bold;
+    margin-bottom: 25px;
+}
 
-            border: 1px solid #e3e6eb;
+/* CATEGORIAS */
 
-            cursor: pointer;
+.categories {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 
-            transition: 0.2s;
-        }
+    margin-bottom: 35px;
+}
 
-        .category:hover {
-            transform: translateY(-4px);
-            border-color: #4d8dff;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-        }
+.category {
+    background: white;
 
-        .category-icon {
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
+    border: 1px solid #ddd;
 
-        /* ================= INFO ================= */
+    padding: 10px 18px;
 
-        .info {
-            background: white;
+    border-radius: 20px;
 
-            width: 90%;
-            max-width: 1200px;
+    cursor: pointer;
 
-            margin: 60px auto;
+    font-weight: bold;
+}
 
-            padding: 35px;
+.category:hover {
+    background: #111;
+    color: white;
+}
 
-            border-radius: 15px;
+/* PRODUCTOS */
 
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+.products {
+    display: grid;
 
-            gap: 30px;
+    grid-template-columns:
+        repeat(auto-fill, minmax(220px, 1fr));
 
-            border: 1px solid #e3e6eb;
-        }
+    gap: 22px;
+}
 
-        .info-box {
-            text-align: center;
-        }
+.product {
+    background: white;
 
-        .info-box strong {
-            display: block;
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
+    border-radius: 13px;
 
-        .info-box p {
-            color: #666;
-            font-size: 14px;
-        }
+    overflow: hidden;
 
-        /* ================= FOOTER ================= */
+    box-shadow:
+        0 4px 15px rgba(0,0,0,0.07);
+}
 
-        footer {
-            background: #050505;
-            color: white;
+.product-image {
+    height: 210px;
 
-            padding: 40px 6%;
+    background: #e9edf3;
 
-            text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-            margin-top: 80px;
-        }
+    font-size: 50px;
+}
 
-        footer h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
+.product-info {
+    padding: 18px;
+}
 
-        footer p {
-            color: #aaa;
-            font-size: 14px;
-        }
+.product-info h3 {
+    margin-bottom: 10px;
+}
 
-        /* ================= CELULAR ================= */
+.product-category {
+    color: #777;
+    font-size: 13px;
 
-        @media (max-width: 800px) {
+    margin-bottom: 10px;
+}
 
-            header {
-                height: 65px;
-                padding: 0 20px;
-            }
+.price {
+    font-size: 22px;
+    font-weight: bold;
 
-            nav {
-                display: none;
-            }
+    margin-bottom: 15px;
+}
 
-            .hero {
-                min-height: 470px;
-            }
+.add {
+    width: 100%;
 
-            .hero h1 {
-                font-size: 40px;
-            }
+    padding: 12px;
 
-            .hero p {
-                font-size: 17px;
-            }
+    border: none;
 
-            .categories {
-                grid-template-columns: repeat(2, 1fr);
-            }
+    border-radius: 8px;
 
-            .info {
-                grid-template-columns: 1fr;
-            }
+    background: #111;
+    color: white;
 
-        }
+    font-weight: bold;
 
-    </style>
+    cursor: pointer;
+}
+
+.add:hover {
+    background: #2365c7;
+}
+
+/* CARRITO */
+
+.cart-panel {
+    position: fixed;
+
+    right: -400px;
+    top: 0;
+
+    width: 380px;
+    max-width: 90%;
+
+    height: 100vh;
+
+    background: white;
+
+    z-index: 1000;
+
+    box-shadow:
+        -5px 0 25px rgba(0,0,0,0.2);
+
+    padding: 25px;
+
+    transition: 0.3s;
+
+    overflow-y: auto;
+}
+
+.cart-panel.open {
+    right: 0;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.close-cart {
+    border: none;
+    background: none;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-name {
+    font-weight: bold;
+}
+
+.cart-item-price {
+    color: #555;
+    margin-top: 5px;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.quantity button {
+    width: 25px;
+    height: 25px;
+
+    border: 1px solid #ddd;
+
+    background: white;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+.cart-total {
+    margin-top: 25px;
+
+    font-size: 22px;
+
+    font-weight: bold;
+}
+
+.whatsapp {
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #25D366;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.minimum-warning {
+    margin-top: 12px;
+
+    color: #d33;
+
+    font-size: 14px;
+}
+
+/* OVERLAY */
+
+.overlay {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,0.5);
+
+    z-index: 900;
+}
+
+.overlay.show {
+    display: block;
+}
+
+/* FOOTER */
+
+footer {
+    background: #050505;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 40px;
+
+    margin-top: 70px;
+}
+
+/* CELULAR */
+
+@media(max-width:700px) {
+
+    header {
+        padding: 0 20px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .cart-panel {
+        width: 100%;
+        max-width: 100%;
+    }
+
+}
+
+</style>
 </head>
-
 
 <body>
 
-
-<!-- ================= HEADER ================= -->
 
 <header>
 
@@ -312,45 +455,40 @@
 
     <nav>
 
-        <a href="#">Inicio</a>
-
-        <a href="#categorias">
-            Catálogo
+        <a href="#">
+            Inicio
         </a>
 
-        <a href="#como-comprar">
-            Cómo comprar
+        <a href="#catalogo">
+            Catálogo
         </a>
 
     </nav>
 
-    <button class="cart-button">
-        🛒 Carrito (0)
+    <button
+        class="cart-button"
+        onclick="openCart()"
+    >
+        🛒 Carrito (<span id="cart-count">0</span>)
     </button>
 
 </header>
 
 
-<!-- ================= HERO ================= -->
-
 <section class="hero">
 
-    <div class="hero-content">
+    <div>
 
         <h1>
             Tecnología al <span>por mayor</span>
         </h1>
 
         <p>
-            Accesorios, productos Apple y tecnología para tu negocio.
+            Accesorios Apple, tecnología y mucho más.
         </p>
 
-        <div class="minimum">
-            Compra mínima • Envíos a todo el país
-        </div>
-
         <a
-            href="#categorias"
+            href="#catalogo"
             class="hero-button"
         >
             VER CATÁLOGO
@@ -361,143 +499,132 @@
 </section>
 
 
-<!-- ================= CATEGORIAS ================= -->
-
-<section
-    class="section"
-    id="categorias"
+<main
+    class="container"
+    id="catalogo"
 >
 
     <h2 class="section-title">
-        Categorías
+        Nuestro catálogo
     </h2>
+
+
+    <input
+        type="text"
+        id="search"
+        class="search"
+        placeholder="🔎 Buscar productos..."
+        oninput="searchProducts()"
+    >
 
 
     <div class="categories">
 
+        <button
+            class="category"
+            onclick="filterProducts('Todos')"
+        >
+            Todos
+        </button>
 
-        <div class="category">
+        <button
+            class="category"
+            onclick="filterProducts('Apple')"
+        >
+            🍎 Apple
+        </button>
 
-            <div class="category-icon">
-                🍎
-            </div>
+        <button
+            class="category"
+            onclick="filterProducts('Accesorios')"
+        >
+            📱 Accesorios
+        </button>
 
-            Apple
+        <button
+            class="category"
+            onclick="filterProducts('Cargadores')"
+        >
+            🔌 Cargadores
+        </button>
 
-        </div>
-
-
-        <div class="category">
-
-            <div class="category-icon">
-                📱
-            </div>
-
-            Accesorios
-
-        </div>
-
-
-        <div class="category">
-
-            <div class="category-icon">
-                🔌
-            </div>
-
-            Cargadores
-
-        </div>
-
-
-        <div class="category">
-
-            <div class="category-icon">
-                🎧
-            </div>
-
-            Audio
-
-        </div>
-
-
-        <div class="category">
-
-            <div class="category-icon">
-                💻
-            </div>
-
-            Tecnología
-
-        </div>
-
-
-        <div class="category">
-
-            <div class="category-icon">
-                🔥
-            </div>
-
-            Ofertas
-
-        </div>
-
+        <button
+            class="category"
+            onclick="filterProducts('Audio')"
+        >
+            🎧 Audio
+        </button>
 
     </div>
 
-</section>
+
+    <div
+        class="products"
+        id="products"
+    ></div>
 
 
-<!-- ================= INFO ================= -->
+</main>
 
-<section
-    class="info"
-    id="como-comprar"
+
+<!-- CARRITO -->
+
+<div
+    class="overlay"
+    id="overlay"
+    onclick="closeCart()"
+></div>
+
+
+<div
+    class="cart-panel"
+    id="cart-panel"
 >
 
+    <div class="cart-header">
 
-    <div class="info-box">
+        <h2>
+            🛒 Tu pedido
+        </h2>
 
-        <strong>
-            📦 Venta mayorista
-        </strong>
-
-        <p>
-            Precios especiales para compras por cantidad.
-        </p>
-
-    </div>
-
-
-    <div class="info-box">
-
-        <strong>
-            🛒 Armá tu pedido
-        </strong>
-
-        <p>
-            Elegí todos los productos que necesitás y agregalos al carrito.
-        </p>
+        <button
+            class="close-cart"
+            onclick="closeCart()"
+        >
+            ×
+        </button>
 
     </div>
 
 
-    <div class="info-box">
+    <div id="cart-items"></div>
 
-        <strong>
-            📲 Pedí por WhatsApp
-        </strong>
 
-        <p>
-            Confirmá tu pedido y coordiná el pago y envío.
-        </p>
+    <div class="cart-total">
+
+        Total:
+        $<span id="cart-total">0</span>
 
     </div>
 
 
-</section>
+    <div
+        class="minimum-warning"
+        id="minimum-warning"
+    >
+        Compra mínima: $50.000
+    </div>
 
 
-<!-- ================= FOOTER ================= -->
+    <button
+        class="whatsapp"
+        onclick="sendWhatsApp()"
+    >
+        📲 PEDIR POR WHATSAPP
+    </button>
+
+</div>
+
 
 <footer>
 
@@ -509,13 +636,463 @@
         Venta mayorista de tecnología y accesorios.
     </p>
 
-    <p style="margin-top:15px;">
-        © 2026 Tecnocel
-    </p>
-
 </footer>
 
 
-</body>
+<script>
 
+/* ================= PRODUCTOS DE PRUEBA ================= */
+
+const products = [
+
+    {
+        id: 1,
+        name: "Funda iPhone 15",
+        price: 12000,
+        category: "Apple",
+        image: "📱"
+    },
+
+    {
+        id: 2,
+        name: "Cable USB-C",
+        price: 8500,
+        category: "Cargadores",
+        image: "🔌"
+    },
+
+    {
+        id: 3,
+        name: "Auriculares Bluetooth",
+        price: 18000,
+        category: "Audio",
+        image: "🎧"
+    },
+
+    {
+        id: 4,
+        name: "Vidrio Templado",
+        price: 6000,
+        category: "Accesorios",
+        image: "📱"
+    },
+
+    {
+        id: 5,
+        name: "Cargador USB-C",
+        price: 15000,
+        category: "Cargadores",
+        image: "🔌"
+    },
+
+    {
+        id: 6,
+        name: "AirPods",
+        price: 45000,
+        category: "Apple",
+        image: "🎧"
+    }
+
+];
+
+
+let cart = [];
+
+let currentCategory = "Todos";
+
+
+/* ================= MOSTRAR PRODUCTOS ================= */
+
+function displayProducts(list = products) {
+
+    const container =
+        document.getElementById("products");
+
+    container.innerHTML = "";
+
+
+    list.forEach(product => {
+
+        const card =
+            document.createElement("div");
+
+        card.className = "product";
+
+
+        card.innerHTML = `
+
+            <div class="product-image">
+                ${product.image}
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    ${product.category}
+                </div>
+
+                <h3>
+                    ${product.name}
+                </h3>
+
+                <div class="price">
+                    $${formatPrice(product.price)}
+                </div>
+
+                <button
+                    class="add"
+                    onclick="addToCart(${product.id})"
+                >
+                    🛒 Agregar al carrito
+                </button>
+
+            </div>
+
+        `;
+
+
+        container.appendChild(card);
+
+    });
+
+}
+
+
+/* ================= FORMATO PRECIO ================= */
+
+function formatPrice(price) {
+
+    return price.toLocaleString("es-AR");
+
+}
+
+
+/* ================= AGREGAR ================= */
+
+function addToCart(id) {
+
+    const product =
+        products.find(p => p.id === id);
+
+
+    const existing =
+        cart.find(item => item.id === id);
+
+
+    if(existing) {
+
+        existing.quantity++;
+
+    } else {
+
+        cart.push({
+
+            ...product,
+
+            quantity: 1
+
+        });
+
+    }
+
+
+    updateCart();
+
+    openCart();
+
+}
+
+
+/* ================= ACTUALIZAR CARRITO ================= */
+
+function updateCart() {
+
+    const container =
+        document.getElementById("cart-items");
+
+    container.innerHTML = "";
+
+
+    let total = 0;
+
+    let count = 0;
+
+
+    cart.forEach(item => {
+
+        total +=
+            item.price * item.quantity;
+
+        count +=
+            item.quantity;
+
+
+        const div =
+            document.createElement("div");
+
+        div.className = "cart-item";
+
+
+        div.innerHTML = `
+
+            <div class="cart-item-info">
+
+                <div class="cart-item-name">
+                    ${item.name}
+                </div>
+
+                <div class="cart-item-price">
+                    $${formatPrice(item.price)}
+                </div>
+
+            </div>
+
+            <div class="quantity">
+
+                <button
+                    onclick="changeQuantity(${item.id}, -1)"
+                >
+                    −
+                </button>
+
+                <span>
+                    ${item.quantity}
+                </span>
+
+                <button
+                    onclick="changeQuantity(${item.id}, 1)"
+                >
+                    +
+                </button>
+
+            </div>
+
+        `;
+
+
+        container.appendChild(div);
+
+    });
+
+
+    document.getElementById("cart-total")
+        .textContent = formatPrice(total);
+
+
+    document.getElementById("cart-count")
+        .textContent = count;
+
+
+    const warning =
+        document.getElementById("minimum-warning");
+
+
+    if(total >= 50000) {
+
+        warning.textContent =
+            "✅ Pedido mínimo alcanzado";
+
+        warning.style.color = "#16833b";
+
+    } else {
+
+        warning.textContent =
+            "Compra mínima: $50.000";
+
+        warning.style.color = "#d33";
+
+    }
+
+}
+
+
+/* ================= CAMBIAR CANTIDAD ================= */
+
+function changeQuantity(id, change) {
+
+    const item =
+        cart.find(item => item.id === id);
+
+
+    if(!item) return;
+
+
+    item.quantity += change;
+
+
+    if(item.quantity <= 0) {
+
+        cart =
+            cart.filter(item => item.id !== id);
+
+    }
+
+
+    updateCart();
+
+}
+
+
+/* ================= ABRIR CARRITO ================= */
+
+function openCart() {
+
+    document
+        .getElementById("cart-panel")
+        .classList.add("open");
+
+
+    document
+        .getElementById("overlay")
+        .classList.add("show");
+
+}
+
+
+/* ================= CERRAR CARRITO ================= */
+
+function closeCart() {
+
+    document
+        .getElementById("cart-panel")
+        .classList.remove("open");
+
+
+    document
+        .getElementById("overlay")
+        .classList.remove("show");
+
+}
+
+
+/* ================= FILTROS ================= */
+
+function filterProducts(category) {
+
+    currentCategory = category;
+
+
+    if(category === "Todos") {
+
+        displayProducts(products);
+
+        return;
+
+    }
+
+
+    const filtered =
+        products.filter(
+            product =>
+                product.category === category
+        );
+
+
+    displayProducts(filtered);
+
+}
+
+
+/* ================= BUSCAR ================= */
+
+function searchProducts() {
+
+    const text =
+        document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+
+    let filtered =
+        products.filter(product =>
+            product.name
+            .toLowerCase()
+            .includes(text)
+        );
+
+
+    if(currentCategory !== "Todos") {
+
+        filtered =
+            filtered.filter(
+                product =>
+                    product.category === currentCategory
+            );
+
+    }
+
+
+    displayProducts(filtered);
+
+}
+
+
+/* ================= WHATSAPP ================= */
+
+function sendWhatsApp() {
+
+    if(cart.length === 0) {
+
+        alert(
+            "El carrito está vacío."
+        );
+
+        return;
+
+    }
+
+
+    let total = 0;
+
+
+    let message =
+        "Hola! Quiero realizar el siguiente pedido:%0A%0A";
+
+
+    cart.forEach(item => {
+
+        const subtotal =
+            item.price * item.quantity;
+
+
+        total += subtotal;
+
+
+        message +=
+            `• ${item.name} x${item.quantity} — $${formatPrice(subtotal)}%0A`;
+
+    });
+
+
+    message +=
+        `%0A*Total: $${formatPrice(total)}*`;
+
+
+    message +=
+        "%0A%0AQuiero consultar medios de pago y envío.";
+
+
+    const phone =
+        "549XXXXXXXXXX";
+
+
+    window.open(
+        `https://wa.me/${phone}?text=${message}`,
+        "_blank"
+    );
+
+}
+
+
+/* ================= INICIAR ================= */
+
+displayProducts();
+
+updateCart();
+
+</script>
+
+
+</body>
 </html>

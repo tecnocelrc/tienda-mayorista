@@ -657,14 +657,19 @@ footer p {
         </a>
 
 
-        <div class="dropdown">
+<div class="dropdown">
 
-            <button class="dropdown-button">
-                Categorías ▾
-            </button>
+    <button
+        class="dropdown-button"
+        onclick="toggleCategories(event)"
+    >
+        Categorías ▾
+    </button>
 
-
-            <div class="dropdown-content">
+    <div
+        class="dropdown-content"
+        id="category-menu"
+    >
 
                 <button onclick="filterProducts('Todos')">
                     🛍️ Todos los productos

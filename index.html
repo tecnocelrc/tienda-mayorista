@@ -1489,7 +1489,32 @@ function sendWhatsApp() {
     );
 
 }
+/* =====================================================
+   MENU CATEGORIAS
+===================================================== */
 
+function toggleCategories(event) {
+
+    event.stopPropagation();
+
+    const menu =
+        document.getElementById("category-menu");
+
+    menu.classList.toggle("show");
+
+}
+
+
+/* Cerrar menú al hacer clic afuera */
+
+document.addEventListener("click", function() {
+
+    const menu =
+        document.getElementById("category-menu");
+
+    menu.classList.remove("show");
+
+});
 
 /* =====================================================
    INICIAR

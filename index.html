@@ -515,7 +515,39 @@ nav a:hover,
     margin-bottom: 10px;
 
 }
+.model {
 
+    font-size: 13px;
+
+    color: #555;
+
+    margin-bottom: 10px;
+
+}
+
+
+.description {
+
+    font-size: 13px;
+
+    color: #777;
+
+    line-height: 1.4;
+
+    margin-bottom: 12px;
+
+}
+
+
+.stock {
+
+    font-size: 12px;
+
+    color: #16833b;
+
+    margin-bottom: 12px;
+
+}
 
 .price {
 
@@ -1428,64 +1460,88 @@ const products = [
     {
         id: 1,
         name: "Funda iPhone 15",
+        model: "Silicona Premium",
         price: 12000,
         category: "Apple",
+        stock: 25,
+        description: "Funda de silicona con protección para iPhone 15.",
         image: "img/funda-iphone-15.jpg"
     },
 
     {
         id: 2,
         name: "Cable USB-C",
+        model: "Carga Rápida 1M",
         price: 8500,
         category: "Cargadores",
+        stock: 50,
+        description: "Cable USB-C de carga rápida y transferencia de datos.",
         image: "img/cable-usbc.jpg"
     },
 
     {
         id: 3,
         name: "Auriculares Bluetooth",
+        model: "TWS Pro",
         price: 18000,
         category: "Audio",
+        stock: 20,
+        description: "Auriculares inalámbricos Bluetooth con estuche de carga.",
         image: "img/auriculares.jpg"
     },
 
     {
         id: 4,
         name: "Vidrio Templado",
+        model: "iPhone 15",
         price: 6000,
         category: "Accesorios",
+        stock: 100,
+        description: "Protector de pantalla de vidrio templado.",
         image: "img/vidrio-templado.jpg"
     },
 
     {
         id: 5,
         name: "Cargador USB-C",
+        model: "20W",
         price: 15000,
         category: "Cargadores",
+        stock: 35,
+        description: "Cargador USB-C de 20W para carga rápida.",
         image: "img/cargador-usbc.jpg"
     },
 
     {
         id: 6,
         name: "AirPods",
+        model: "Inalámbricos",
         price: 45000,
         category: "Apple",
+        stock: 15,
+        description: "Auriculares inalámbricos con estuche de carga.",
         image: "img/airpods.jpg"
     },
 
     {
         id: 7,
         name: "Parlante Bluetooth",
+        model: "Portable",
         price: 30000,
         category: "Audio",
+        stock: 18,
+        description: "Parlante portátil Bluetooth con batería recargable.",
         image: "img/parlante.jpg"
     },
 
     {
         id: 8,
         name: "Soporte para celular",
+        model: "Universal",
         price: 9000,
         category: "Tecnología",
+        stock: 40,
+        description: "Soporte universal para celular.",
         image: "img/soporte.jpg"
     }
 
@@ -1538,63 +1594,76 @@ function displayProducts(list = products) {
         card.className = "product";
 
 
-        card.innerHTML = `
+card.innerHTML = `
 
-            <div class="product-image">
+    <div class="product-image">
 
-    <img
-        src="${product.image}"
-        alt="${product.name}"
-    >
+        <img
+            src="${product.image}"
+            alt="${product.name}"
+        >
 
-</div>
-
-            </div>
+    </div>
 
 
-            <div class="product-info">
+    <div class="product-info">
 
 
-                <div class="product-category">
+        <div class="product-category">
 
-                    ${product.category}
+            ${product.category}
 
-                </div>
-
-
-                <h3>
-
-                    ${product.name}
-
-                </h3>
+        </div>
 
 
-                <div class="price">
+        <h3>
 
-                    $${formatPrice(product.price)}
+            ${product.name}
 
-                </div>
-
-
-                <button
-                    class="add"
-                    onclick="addToCart(${product.id})"
-                >
-
-                    🛒 Agregar al carrito
-
-                </button>
+        </h3>
 
 
-            </div>
+        <div class="model">
 
-        `;
+            ${product.model}
+
+        </div>
 
 
-        container.appendChild(card);
+        <p class="description">
+
+            ${product.description}
+
+        </p>
 
 
-    });
+        <div class="stock">
+
+            Stock disponible: ${product.stock}
+
+        </div>
+
+
+        <div class="price">
+
+            $${formatPrice(product.price)}
+
+        </div>
+
+
+        <button
+            class="add"
+            onclick="addToCart(${product.id})"
+        >
+
+            🛒 Agregar al carrito
+
+        </button>
+
+
+    </div>
+
+`;
 
 }
 

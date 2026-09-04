@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Tecnocel | Venta Mayorista</title>
 
+
 <style>
+
+/* =====================================================
+   GENERAL
+===================================================== */
 
 * {
     margin: 0;
@@ -20,153 +28,200 @@ body {
     color: #111;
 }
 
-/* ================= HEADER ================= */
+
+/* =====================================================
+   HEADER
+===================================================== */
 
 header {
+
     height: 75px;
+
     background: #050505;
+
     color: white;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     padding: 0 6%;
 
     position: sticky;
+
     top: 0;
-    z-index: 100;
-}
-
-.logo {
-    font-size: 25px;
-    font-weight: 800;
-    letter-spacing: -1px;
-}
-
-.logo span {
-    color: #4d8dff;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-}
-
-nav a,
-.dropdown-button {
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 600;
-}
-
-nav a:hover,
-.dropdown-button:hover {
-    color: #69a1ff;
-}
-
-/* DROPDOWN */
-
-.dropdown {
-    position: relative;
-}
-
-.dropdown-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 15px;
-}
-
-.dropdown-content {
-    display: none;
-
-    position: absolute;
-
-    top: 38px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    min-width: 220px;
-
-    background: white;
-
-    border-radius: 10px;
-
-    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
-
-    overflow: hidden;
-
-    padding: 6px 0;
 
     z-index: 1000;
 }
 
-.dropdown-content.show {
-    display: block;
-}
+
+.logo {
+
+    font-size: 25px;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
 }
 
-.dropdown-content.show {
-    display: block;
+
+.logo span {
+
+    color: #4d8dff;
+
 }
+
+
+nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+nav a,
+.dropdown-button {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 600;
+}
+
+
+nav a:hover,
+.dropdown-button:hover {
+
+    color: #69a1ff;
+
+}
+
+
+/* =====================================================
+   MENU CATEGORIAS
+===================================================== */
+
+.dropdown {
+
+    position: relative;
+
+}
+
+
+/* BOTON */
+
+.dropdown-button {
+
+    background: transparent;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    padding: 10px 0;
+
+}
+
+
+/* MENU */
+
+.dropdown-content {
+
+    display: none;
 
     position: absolute;
 
-    top: 30px;
-    left: 0;
+    top: 45px;
 
-    min-width: 210px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 230px;
 
     background: white;
 
     border-radius: 10px;
 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.20);
+
+    padding: 7px 0;
 
     overflow: hidden;
+
+    z-index: 2000;
+
 }
 
+
+/* MENU ABIERTO */
+
+.dropdown-content.show {
+
+    display: block;
+
+}
+
+
+/* OPCIONES */
+
 .dropdown-content button {
+
     display: block;
 
     width: 100%;
 
-    padding: 12px 16px;
+    padding: 13px 18px;
 
     border: none;
 
     background: white;
 
-    color: #111;
+    color: #222;
 
     text-align: left;
 
     cursor: pointer;
 
+    font-family: Arial, Helvetica, sans-serif;
+
     font-size: 14px;
 
-    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.15s;
+
 }
+
+
+/* HOVER */
 
 .dropdown-content button:hover {
+
     background: #f0f4fa;
-}
-}
 
-.dropdown-content button:hover {
-    background: #f0f4fa;
+    color: #2365c7;
+
 }
 
 
-/* CART BUTTON */
+/* =====================================================
+   CARRITO HEADER
+===================================================== */
 
 .cart-button {
+
     background: white;
+
     color: #111;
 
     border: none;
@@ -180,20 +235,29 @@ nav a:hover,
     cursor: pointer;
 
     white-space: nowrap;
+
 }
+
 
 .cart-button:hover {
+
     background: #e9eef7;
+
 }
 
 
-/* ================= HERO ================= */
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero {
+
     min-height: 430px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
@@ -201,6 +265,7 @@ nav a:hover,
     color: white;
 
     background:
+
         linear-gradient(
             120deg,
             #020617,
@@ -209,38 +274,63 @@ nav a:hover,
         );
 
     padding: 60px 20px;
+
 }
+
 
 .hero-content {
+
     max-width: 850px;
+
 }
+
 
 .hero h1 {
+
     font-size: 55px;
+
     line-height: 1.05;
+
     margin-bottom: 20px;
+
     letter-spacing: -2px;
+
 }
+
 
 .hero h1 span {
+
     color: #8bb8ff;
+
 }
+
 
 .hero p {
+
     font-size: 19px;
+
     color: #e5ebf8;
+
     margin-bottom: 15px;
+
 }
+
 
 .hero-info {
+
     color: #c9d7f0;
+
     margin-bottom: 30px;
+
 }
 
+
 .hero-button {
+
     display: inline-block;
 
     background: white;
+
     color: #111;
 
     padding: 14px 27px;
@@ -252,30 +342,47 @@ nav a:hover,
     font-weight: bold;
 
     transition: 0.2s;
+
 }
+
 
 .hero-button:hover {
+
     transform: translateY(-2px);
+
 }
 
 
-/* ================= CONTENEDOR ================= */
+/* =====================================================
+   CONTENEDOR
+===================================================== */
 
 .container {
+
     width: 90%;
+
     max-width: 1200px;
+
     margin: 55px auto;
+
 }
+
 
 .section-title {
+
     font-size: 30px;
+
     margin-bottom: 25px;
+
 }
 
 
-/* ================= BUSCADOR ================= */
+/* =====================================================
+   BUSCADOR
+===================================================== */
 
 .search {
+
     width: 100%;
 
     padding: 15px;
@@ -286,28 +393,38 @@ nav a:hover,
 
     font-size: 16px;
 
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 
     outline: none;
+
 }
+
 
 .search:focus {
+
     border-color: #4d8dff;
+
 }
 
 
-/* ================= PRODUCTOS ================= */
+/* =====================================================
+   PRODUCTOS
+===================================================== */
 
 .products {
+
     display: grid;
 
     grid-template-columns:
         repeat(auto-fill, minmax(220px, 1fr));
 
     gap: 22px;
+
 }
 
+
 .product {
+
     background: white;
 
     border-radius: 13px;
@@ -318,54 +435,77 @@ nav a:hover,
         0 4px 15px rgba(0,0,0,0.07);
 
     transition: 0.2s;
+
 }
 
+
 .product:hover {
+
     transform: translateY(-3px);
 
     box-shadow:
         0 8px 25px rgba(0,0,0,0.10);
+
 }
 
+
 .product-image {
+
     height: 210px;
 
     background: #e9edf3;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     font-size: 50px;
+
 }
+
 
 .product-info {
+
     padding: 18px;
+
 }
 
+
 .product-category {
+
     color: #777;
 
     font-size: 13px;
 
     margin-bottom: 8px;
+
 }
 
+
 .product-info h3 {
+
     font-size: 17px;
 
     margin-bottom: 10px;
+
 }
 
+
 .price {
+
     font-size: 22px;
 
     font-weight: bold;
 
     margin-bottom: 15px;
+
 }
 
+
 .add {
+
     width: 100%;
 
     padding: 12px;
@@ -381,16 +521,23 @@ nav a:hover,
     font-weight: bold;
 
     cursor: pointer;
+
 }
+
 
 .add:hover {
+
     background: #2365c7;
+
 }
 
 
-/* ================= CARRITO ================= */
+/* =====================================================
+   CARRITO
+===================================================== */
 
 .cart-panel {
+
     position: fixed;
 
     right: -430px;
@@ -405,7 +552,7 @@ nav a:hover,
 
     background: white;
 
-    z-index: 1000;
+    z-index: 3000;
 
     box-shadow:
         -5px 0 25px rgba(0,0,0,0.2);
@@ -415,13 +562,19 @@ nav a:hover,
     transition: 0.3s;
 
     overflow-y: auto;
+
 }
+
 
 .cart-panel.open {
+
     right: 0;
+
 }
 
+
 .cart-header {
+
     display: flex;
 
     justify-content: space-between;
@@ -429,9 +582,12 @@ nav a:hover,
     align-items: center;
 
     margin-bottom: 25px;
+
 }
 
+
 .close-cart {
+
     border: none;
 
     background: none;
@@ -439,35 +595,50 @@ nav a:hover,
     font-size: 28px;
 
     cursor: pointer;
+
 }
 
+
 .empty-cart {
+
     text-align: center;
 
     color: #777;
 
     padding: 40px 0;
+
 }
 
+
 .cart-item {
+
     padding: 17px 0;
 
     border-bottom: 1px solid #eee;
+
 }
 
+
 .cart-item-top {
+
     display: flex;
 
     justify-content: space-between;
 
     gap: 10px;
+
 }
+
 
 .cart-item-name {
+
     font-weight: bold;
+
 }
 
+
 .delete {
+
     border: none;
 
     background: none;
@@ -476,18 +647,24 @@ nav a:hover,
 
     cursor: pointer;
 
-    font-size: 14px;
+    font-size: 13px;
+
 }
 
+
 .cart-item-price {
+
     color: #666;
 
     margin-top: 6px;
 
     font-size: 14px;
+
 }
 
+
 .cart-item-bottom {
+
     display: flex;
 
     align-items: center;
@@ -495,18 +672,25 @@ nav a:hover,
     justify-content: space-between;
 
     margin-top: 12px;
+
 }
 
+
 .quantity {
+
     display: flex;
 
     align-items: center;
 
     gap: 9px;
+
 }
 
+
 .quantity button {
+
     width: 27px;
+
     height: 27px;
 
     border: 1px solid #ddd;
@@ -516,37 +700,52 @@ nav a:hover,
     border-radius: 6px;
 
     cursor: pointer;
+
 }
+
 
 .item-subtotal {
+
     font-weight: bold;
+
 }
 
+
 .cart-summary {
+
     margin-top: 25px;
 
     padding-top: 20px;
 
     border-top: 2px solid #eee;
+
 }
 
+
 .summary-row {
+
     display: flex;
 
     justify-content: space-between;
 
     margin-bottom: 10px;
+
 }
 
+
 .cart-total {
+
     font-size: 23px;
 
     font-weight: bold;
 
     margin-top: 15px;
+
 }
 
+
 .minimum-info {
+
     margin-top: 12px;
 
     padding: 12px;
@@ -556,21 +755,30 @@ nav a:hover,
     background: #f4f5f7;
 
     font-size: 14px;
+
 }
 
+
 .minimum-ok {
+
     background: #e8f8ee;
 
     color: #16833b;
+
 }
 
+
 .minimum-bad {
+
     background: #fff0f0;
 
     color: #c22;
+
 }
 
+
 .whatsapp {
+
     width: 100%;
 
     margin-top: 20px;
@@ -590,18 +798,25 @@ nav a:hover,
     font-weight: bold;
 
     cursor: pointer;
+
 }
 
+
 .whatsapp:disabled {
+
     background: #aaa;
 
     cursor: not-allowed;
+
 }
 
 
-/* ================= OVERLAY ================= */
+/* =====================================================
+   OVERLAY
+===================================================== */
 
 .overlay {
+
     display: none;
 
     position: fixed;
@@ -610,17 +825,42 @@ nav a:hover,
 
     background: rgba(0,0,0,0.5);
 
-    z-index: 900;
+    z-index: 2500;
+
 }
+
 
 .overlay.show {
+
     display: block;
+
 }
 
 
-/* ================= FOOTER ================= */
+/* =====================================================
+   COMO COMPRAR
+===================================================== */
+
+.how-to {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 13px;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,0.06);
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer {
+
     background: #050505;
 
     color: white;
@@ -630,107 +870,185 @@ footer {
     padding: 40px;
 
     margin-top: 70px;
+
 }
+
 
 footer h3 {
+
     margin-bottom: 10px;
+
 }
 
+
 footer p {
+
     color: #aaa;
 
     font-size: 14px;
+
 }
 
 
-/* ================= CELULAR ================= */
+/* =====================================================
+   CELULAR
+===================================================== */
 
 @media(max-width: 800px) {
 
     header {
+
         height: 65px;
 
         padding: 0 18px;
+
     }
+
 
     nav {
+
         display: none;
+
     }
+
 
     .hero {
+
         min-height: 440px;
+
     }
+
 
     .hero h1 {
+
         font-size: 39px;
+
     }
 
+
     .hero p {
+
         font-size: 17px;
+
+    }
+
+
+    .cart-panel {
+
+        width: 100%;
+
+        max-width: 100%;
+
     }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- ================= HEADER ================= -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header>
 
+
     <div class="logo">
+
         TECNO<span>CEL</span>
+
     </div>
 
 
     <nav>
 
+
         <a href="#">
+
             Inicio
+
         </a>
 
 
-<div class="dropdown">
+        <!-- CATEGORIAS -->
 
-    <button
-        class="dropdown-button"
-        onclick="toggleCategories(event)"
-    >
-        Categorías ▾
-    </button>
+        <div class="dropdown">
 
-    <div
-        class="dropdown-content"
-        id="category-menu"
-    >
 
-                <button onclick="filterProducts('Todos')">
+            <button
+                class="dropdown-button"
+                id="category-button"
+            >
+
+                Categorías ▾
+
+            </button>
+
+
+            <div
+                class="dropdown-content"
+                id="category-menu"
+            >
+
+
+                <button
+                    onclick="filterProducts('Todos')"
+                >
+
                     🛍️ Todos los productos
+
                 </button>
 
-                <button onclick="filterProducts('Apple')">
+
+                <button
+                    onclick="filterProducts('Apple')"
+                >
+
                     🍎 Apple
+
                 </button>
 
-                <button onclick="filterProducts('Accesorios')">
+
+                <button
+                    onclick="filterProducts('Accesorios')"
+                >
+
                     📱 Accesorios
+
                 </button>
 
-                <button onclick="filterProducts('Cargadores')">
+
+                <button
+                    onclick="filterProducts('Cargadores')"
+                >
+
                     🔌 Cargadores
+
                 </button>
 
-                <button onclick="filterProducts('Audio')">
+
+                <button
+                    onclick="filterProducts('Audio')"
+                >
+
                     🎧 Audio
+
                 </button>
 
-                <button onclick="filterProducts('Tecnología')">
+
+                <button
+                    onclick="filterProducts('Tecnología')"
+                >
+
                     💻 Tecnología
+
                 </button>
+
 
             </div>
 
@@ -738,8 +1056,11 @@ footer p {
 
 
         <a href="#como-comprar">
+
             Cómo comprar
+
         </a>
+
 
     </nav>
 
@@ -748,52 +1069,80 @@ footer p {
         class="cart-button"
         onclick="openCart()"
     >
+
         🛒 Carrito
         (<span id="cart-count">0</span>)
+
     </button>
+
 
 </header>
 
 
-<!-- ================= HERO ================= -->
+
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <section class="hero">
 
+
     <div class="hero-content">
 
+
         <h1>
-            Tecnología al <span>por mayor</span>
+
+            Tecnología al
+            <span>por mayor</span>
+
         </h1>
 
+
         <p>
+
             Accesorios Apple, tecnología, audio y mucho más.
+
         </p>
 
+
         <div class="hero-info">
+
             Precios mayoristas • Compra mínima • Envíos a todo el país
+
         </div>
+
 
         <a
             href="#catalogo"
             class="hero-button"
         >
+
             VER CATÁLOGO
+
         </a>
 
+
     </div>
+
 
 </section>
 
 
-<!-- ================= CATALOGO ================= -->
+
+<!-- =====================================================
+     CATALOGO
+===================================================== -->
 
 <main
     class="container"
     id="catalogo"
 >
 
+
     <h2 class="section-title">
+
         Catálogo
+
     </h2>
 
 
@@ -802,7 +1151,6 @@ footer p {
         id="search"
         class="search"
         placeholder="🔎 Buscar productos..."
-        oninput="searchProducts()"
     >
 
 
@@ -811,29 +1159,88 @@ footer p {
         id="products"
     ></div>
 
+
 </main>
 
 
-<!-- ================= COMO COMPRAR ================= -->
+
+<!-- =====================================================
+     COMO COMPRAR
+===================================================== -->
 
 <section
     class="container"
     id="como-comprar"
 >
 
-    <h2 class="section-title">
-        ¿Cómo comprar?
-    </h2>
 
-    <p>
-        Elegí los productos, agregalos al carrito y enviá tu pedido por WhatsApp.
-        Luego coordinamos el pago y el envío.
-    </p>
+    <div class="how-to">
+
+
+        <h2 class="section-title">
+
+            ¿Cómo comprar?
+
+        </h2>
+
+
+        <p>
+
+            1. Elegí los productos que querés comprar.
+
+        </p>
+
+
+        <br>
+
+
+        <p>
+
+            2. Agregalos al carrito.
+
+        </p>
+
+
+        <br>
+
+
+        <p>
+
+            3. Alcanzá el mínimo de compra.
+
+        </p>
+
+
+        <br>
+
+
+        <p>
+
+            4. Enviá tu pedido por WhatsApp.
+
+        </p>
+
+
+        <br>
+
+
+        <p>
+
+            5. Coordinamos el pago y el envío.
+
+        </p>
+
+
+    </div>
+
 
 </section>
 
 
-<!-- ================= OVERLAY ================= -->
+
+<!-- =====================================================
+     OVERLAY
+===================================================== -->
 
 <div
     class="overlay"
@@ -842,25 +1249,36 @@ footer p {
 ></div>
 
 
-<!-- ================= CARRITO ================= -->
+
+<!-- =====================================================
+     CARRITO
+===================================================== -->
 
 <div
     class="cart-panel"
     id="cart-panel"
 >
 
+
     <div class="cart-header">
 
+
         <h2>
+
             🛒 Tu pedido
+
         </h2>
+
 
         <button
             class="close-cart"
             onclick="closeCart()"
         >
+
             ×
+
         </button>
+
 
     </div>
 
@@ -870,15 +1288,23 @@ footer p {
 
     <div class="cart-summary">
 
+
         <div class="summary-row">
 
+
             <span>
+
                 Unidades
+
             </span>
 
+
             <strong id="cart-units">
+
                 0
+
             </strong>
+
 
         </div>
 
@@ -895,7 +1321,9 @@ footer p {
             id="minimum-info"
             class="minimum-info minimum-bad"
         >
+
             Compra mínima: $50.000
+
         </div>
 
 
@@ -905,31 +1333,49 @@ footer p {
             onclick="sendWhatsApp()"
             disabled
         >
+
             📲 PEDIR POR WHATSAPP
+
         </button>
 
+
     </div>
+
 
 </div>
 
 
-<!-- ================= FOOTER ================= -->
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
+
     <h3>
+
         TECNOCEL
+
     </h3>
 
+
     <p>
+
         Venta mayorista de tecnología y accesorios.
+
     </p>
+
 
     <p style="margin-top:15px;">
+
         © 2026 Tecnocel
+
     </p>
 
+
 </footer>
+
 
 
 <script>
@@ -943,8 +1389,7 @@ const MINIMUM_PURCHASE = 50000;
 
 
 /*
-    Más adelante vamos a reemplazar este número
-    por el WhatsApp real de Tecnocel.
+   ACÁ PONDREMOS EL WHATSAPP REAL MÁS ADELANTE
 */
 
 const WHATSAPP_NUMBER = "549XXXXXXXXXX";
@@ -956,6 +1401,7 @@ const WHATSAPP_NUMBER = "549XXXXXXXXXX";
 
 const products = [
 
+
     {
         id: 1,
         name: "Funda iPhone 15",
@@ -963,6 +1409,7 @@ const products = [
         category: "Apple",
         image: "📱"
     },
+
 
     {
         id: 2,
@@ -972,6 +1419,7 @@ const products = [
         image: "🔌"
     },
 
+
     {
         id: 3,
         name: "Auriculares Bluetooth",
@@ -979,6 +1427,7 @@ const products = [
         category: "Audio",
         image: "🎧"
     },
+
 
     {
         id: 4,
@@ -988,6 +1437,7 @@ const products = [
         image: "📱"
     },
 
+
     {
         id: 5,
         name: "Cargador USB-C",
@@ -995,6 +1445,7 @@ const products = [
         category: "Cargadores",
         image: "🔌"
     },
+
 
     {
         id: 6,
@@ -1004,6 +1455,7 @@ const products = [
         image: "🎧"
     },
 
+
     {
         id: 7,
         name: "Parlante Bluetooth",
@@ -1011,6 +1463,7 @@ const products = [
         category: "Audio",
         image: "🔊"
     },
+
 
     {
         id: 8,
@@ -1034,8 +1487,10 @@ let currentCategory = "Todos";
 
 function displayProducts(list = products) {
 
+
     const container =
         document.getElementById("products");
+
 
     container.innerHTML = "";
 
@@ -1043,19 +1498,26 @@ function displayProducts(list = products) {
     if(list.length === 0) {
 
         container.innerHTML = `
+
             <p>
+
                 No encontramos productos.
+
             </p>
+
         `;
 
         return;
+
     }
 
 
     list.forEach(product => {
 
+
         const card =
             document.createElement("div");
+
 
         card.className = "product";
 
@@ -1063,29 +1525,45 @@ function displayProducts(list = products) {
         card.innerHTML = `
 
             <div class="product-image">
+
                 ${product.image}
+
             </div>
+
 
             <div class="product-info">
 
+
                 <div class="product-category">
+
                     ${product.category}
+
                 </div>
+
 
                 <h3>
+
                     ${product.name}
+
                 </h3>
 
+
                 <div class="price">
+
                     $${formatPrice(product.price)}
+
                 </div>
+
 
                 <button
                     class="add"
                     onclick="addToCart(${product.id})"
                 >
+
                     🛒 Agregar al carrito
+
                 </button>
+
 
             </div>
 
@@ -1093,6 +1571,7 @@ function displayProducts(list = products) {
 
 
         container.appendChild(card);
+
 
     });
 
@@ -1116,6 +1595,7 @@ function formatPrice(price) {
 
 function addToCart(id) {
 
+
     const product =
         products.find(
             p => p.id === id
@@ -1132,7 +1612,9 @@ function addToCart(id) {
 
         existing.quantity++;
 
-    } else {
+    }
+
+    else {
 
         cart.push({
 
@@ -1158,8 +1640,10 @@ function addToCart(id) {
 
 function updateCart() {
 
+
     const container =
         document.getElementById("cart-items");
+
 
     container.innerHTML = "";
 
@@ -1171,16 +1655,23 @@ function updateCart() {
 
     if(cart.length === 0) {
 
+
         container.innerHTML = `
+
             <div class="empty-cart">
+
                 Tu carrito está vacío.
+
             </div>
+
         `;
+
 
     }
 
 
     cart.forEach(item => {
+
 
         const subtotal =
             item.price * item.quantity;
@@ -1194,65 +1685,92 @@ function updateCart() {
         const div =
             document.createElement("div");
 
+
         div.className = "cart-item";
 
 
         div.innerHTML = `
 
+
             <div class="cart-item-top">
 
+
                 <div class="cart-item-name">
+
                     ${item.name}
+
                 </div>
+
 
                 <button
                     class="delete"
                     onclick="removeItem(${item.id})"
                 >
+
                     🗑️ Eliminar
+
                 </button>
+
 
             </div>
 
 
             <div class="cart-item-price">
+
                 $${formatPrice(item.price)} c/u
+
             </div>
 
 
             <div class="cart-item-bottom">
 
+
                 <div class="quantity">
+
 
                     <button
                         onclick="changeQuantity(${item.id}, -1)"
                     >
+
                         −
+
                     </button>
 
+
                     <span>
+
                         ${item.quantity}
+
                     </span>
+
 
                     <button
                         onclick="changeQuantity(${item.id}, 1)"
                     >
+
                         +
+
                     </button>
+
 
                 </div>
 
 
                 <div class="item-subtotal">
+
                     $${formatPrice(subtotal)}
+
                 </div>
 
+
             </div>
+
 
         `;
 
 
         container.appendChild(div);
+
 
     });
 
@@ -1282,8 +1800,10 @@ function updateCart() {
 
     if(total >= MINIMUM_PURCHASE) {
 
+
         minimum.className =
             "minimum-info minimum-ok";
+
 
         minimum.textContent =
             "✅ Pedido mínimo alcanzado";
@@ -1291,22 +1811,29 @@ function updateCart() {
 
         whatsapp.disabled = false;
 
-    } else {
+
+    }
+
+    else {
+
 
         minimum.className =
             "minimum-info minimum-bad";
+
 
         const missing =
             MINIMUM_PURCHASE - total;
 
 
         minimum.textContent =
+
             "Faltan $" +
             formatPrice(missing) +
             " para alcanzar el mínimo";
 
 
         whatsapp.disabled = true;
+
 
     }
 
@@ -1318,6 +1845,7 @@ function updateCart() {
 ===================================================== */
 
 function changeQuantity(id, change) {
+
 
     const item =
         cart.find(
@@ -1333,7 +1861,9 @@ function changeQuantity(id, change) {
 
     if(item.quantity <= 0) {
 
+
         removeItem(id);
+
 
         return;
 
@@ -1346,10 +1876,11 @@ function changeQuantity(id, change) {
 
 
 /* =====================================================
-   ELIMINAR
+   ELIMINAR PRODUCTO
 ===================================================== */
 
 function removeItem(id) {
+
 
     cart =
         cart.filter(
@@ -1368,6 +1899,7 @@ function removeItem(id) {
 
 function openCart() {
 
+
     document
         .getElementById("cart-panel")
         .classList.add("open");
@@ -1376,6 +1908,7 @@ function openCart() {
     document
         .getElementById("overlay")
         .classList.add("show");
+
 
 }
 
@@ -1386,6 +1919,7 @@ function openCart() {
 
 function closeCart() {
 
+
     document
         .getElementById("cart-panel")
         .classList.remove("open");
@@ -1395,16 +1929,21 @@ function closeCart() {
         .getElementById("overlay")
         .classList.remove("show");
 
+
 }
 
 
 /* =====================================================
-   FILTROS
+   FILTRAR PRODUCTOS
 ===================================================== */
 
 function filterProducts(category) {
 
+
     currentCategory = category;
+
+
+    closeCategories();
 
 
     document
@@ -1416,7 +1955,9 @@ function filterProducts(category) {
 
     if(category === "Todos") {
 
+
         displayProducts(products);
+
 
         return;
 
@@ -1441,6 +1982,7 @@ function filterProducts(category) {
 
 function searchProducts() {
 
+
     const text =
         document
         .getElementById("search")
@@ -1459,6 +2001,7 @@ function searchProducts() {
 
     if(currentCategory !== "Todos") {
 
+
         filtered =
             filtered.filter(
                 product =>
@@ -1474,10 +2017,91 @@ function searchProducts() {
 
 
 /* =====================================================
+   MENU CATEGORIAS
+===================================================== */
+
+const categoryButton =
+    document.getElementById("category-button");
+
+
+const categoryMenu =
+    document.getElementById("category-menu");
+
+
+/*
+   Abrir / cerrar al hacer clic
+*/
+
+categoryButton.addEventListener(
+    "click",
+    function(event) {
+
+        event.stopPropagation();
+
+        categoryMenu.classList.toggle("show");
+
+    }
+);
+
+
+/*
+   Evitar que el clic dentro del menú
+   lo cierre inmediatamente
+*/
+
+categoryMenu.addEventListener(
+    "click",
+    function(event) {
+
+        event.stopPropagation();
+
+    }
+);
+
+
+/*
+   Cerrar al hacer clic afuera
+*/
+
+document.addEventListener(
+    "click",
+    function() {
+
+        closeCategories();
+
+    }
+);
+
+
+/*
+   Función para cerrar
+*/
+
+function closeCategories() {
+
+    categoryMenu.classList.remove("show");
+
+}
+
+
+/* =====================================================
+   BUSCADOR EVENTO
+===================================================== */
+
+document
+    .getElementById("search")
+    .addEventListener(
+        "input",
+        searchProducts
+    );
+
+
+/* =====================================================
    WHATSAPP
 ===================================================== */
 
 function sendWhatsApp() {
+
 
     let total = 0;
 
@@ -1488,6 +2112,7 @@ function sendWhatsApp() {
 
     cart.forEach(item => {
 
+
         const subtotal =
             item.price * item.quantity;
 
@@ -1496,6 +2121,7 @@ function sendWhatsApp() {
 
 
         message +=
+
             "• " +
             item.name +
             " x" +
@@ -1504,54 +2130,35 @@ function sendWhatsApp() {
             formatPrice(subtotal) +
             "%0A";
 
+
     });
 
 
     message +=
+
         "%0A*Total: $" +
         formatPrice(total) +
         "*";
 
 
     message +=
+
         "%0A%0AQuiero consultar medios de pago y envío.";
 
 
     window.open(
+
         "https://wa.me/" +
         WHATSAPP_NUMBER +
         "?text=" +
         message,
+
         "_blank"
+
     );
 
 }
-/* =====================================================
-   MENU CATEGORIAS
-===================================================== */
 
-function toggleCategories(event) {
-
-    event.stopPropagation();
-
-    const menu =
-        document.getElementById("category-menu");
-
-    menu.classList.toggle("show");
-
-}
-
-
-/* Cerrar menú al hacer clic afuera */
-
-document.addEventListener("click", function() {
-
-    const menu =
-        document.getElementById("category-menu");
-
-    menu.classList.remove("show");
-
-});
 
 /* =====================================================
    INICIAR
@@ -1561,8 +2168,10 @@ displayProducts();
 
 updateCart();
 
+
 </script>
 
 
 </body>
+
 </html>
